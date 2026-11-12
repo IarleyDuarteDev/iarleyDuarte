@@ -1,0 +1,24 @@
+name: Primeiro Workflow
+on:
+  push:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Iniciando o Workflow"
+            - name: Checkout
+              uses: actions/checkout@v5
+            - name: Exibir Informações do Repositório e do Usuário
+              run: | 
+                    echo "Nome do Repositoria ${{ github.repository }}"
+                    echo "Nome do usuario ${{ github.actor }}"
+            - name: Verificar arquivo README.md
+              run: |
+                    if [ -f "README.md" ]; then
+                        echo "O arquivo README.md existe."
+                    else
+                        echo "O arquivo README.md não existe."
+                        exit 1
+                    fi
+            - name: Validação
+              run: Concluído a validação do arquivo README.md
