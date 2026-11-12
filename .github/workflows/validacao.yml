@@ -21,4 +21,4 @@ jobs:
                         exit 1
                     fi
             - name: Validação
-              run: Concluído a validação do arquivo README.md
+              run: echo "Concluído a validação do arquivo README.md"
